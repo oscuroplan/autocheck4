@@ -237,12 +237,9 @@ function changeEven(numbers, value) {
   // Change code below this line
  const newNumbers = [];
   numbers.forEach((number) => {
-    if(number % 2 === 0){
-   newNumbers.push(number + value)
-    } else {
-    newNumbers.push(number)
-    }
-  });
+    number % 2 === 0 
+      	? newNumbers.push(number + value) 
+    	: newNumbers.push(number);})
   return newNumbers;
   // Change code above this line
 }
@@ -279,3 +276,63 @@ const books = [
 const titles = books.map(books => books.title);
 
 //                                                                      ЗАДАЧА 16/48
+// Используя метод flatMap() сделай так, чтобы в переменной genres получился массив всех жанров книг (свойство genres) из массива книг books.
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["adventure", "history"],
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    genres: ["fiction"],
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    genres: ["horror", "mysticism"],
+  },
+];
+// Change code below this line
+
+const genres = books.flatMap(books => books.genres);
+
+
+//                                                                      ЗАДАЧА 17/48
+// Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
+// Change code below this line
+const getUserNames = users => {
+    
+return users.map (users => users.name)
+  };
+  // Change code above this line
+
+//                                                                      ЗАДАЧА 18/48
+// Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива объектов в параметре users.
+// Change code below this line
+const getUserEmails = users => {
+    return users.map(users => users.email)
+  };
+  // Change code above this line
+
+//                                                                      ЗАДАЧА 19/48
+// Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных.
+// Обязательно используй метод filter().
+const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// Change code below this line
+
+const evenNumbers = numbers.filter((numbers) => numbers % 2 === 0);
+const oddNumbers = numbers.filter((numbers) => numbers % 2 > 0);
+
+//                                                                      ЗАДАЧА 19/48
+// Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных.
+// Обязательно используй метод filter().
+const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// Change code below this line
+const evenNumbers = numbers.filter((numbers) => numbers % 2 === 0);
+const oddNumbers = numbers.filter((numbers) => numbers % 2 > 0);
+
+//                                                                      ЗАДАЧА 20/48
+//Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books,
+// а в переменной uniqueGenres массив уникальных жанров - без повторений.
