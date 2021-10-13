@@ -40,3 +40,11 @@ makePizza("Royal Grand", function deliverPizza(pizzaName) {
 makePizza("Ultracheese", function eatPizza(pizzaName) {
 console.log(`Eating pizza ${pizzaName}.`);
 });
+
+//                                                                      ЗАДАЧА 4/48
+// Необходимо написать логику обработки заказа пиццы. Выполни рефакторинг метода order так, чтобы он принимал вторым и третим параметрами два колбэка onSuccess и onError.
+// Если в свойстве pizzas нет пиццы с названием из параметра pizzaName, метод order должен возвращать результат вызова колбэка onError,
+// передавая ему аргументом строку "There is no pizza with a name <имя пиццы> in the assortment."
+// Если в свойстве pizzas есть пицца с названием из параметра pizzaName, метод order должен возвращать результат вызова колбэка onSuccess,
+// передавая ему аргументом имя заказанной пиццы.
+// После объявления объекта pizzaPalace мы добавили колбэки и вызовы методов. Пожалуйста ничего там не меняй.
