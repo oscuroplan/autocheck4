@@ -586,3 +586,116 @@ return total + player.playtime / player.gamesPlayed}, 0);
 // Онлайн бибилиотеке необходимо отображать книги отсортированные по автору, в алфавитном и обратном алфавитном порядке. Дополни код так,
 // чтобы в переменной authorsInAlphabetOrder получилась отсортированная по алфавиту копия массива authors, а в переменной authorsInReversedOrder
 // копия отсортированная в обратном алфавитном порядке.
+const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+// Change code below this line
+
+const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+
+const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+
+//                                                                      ЗАДАЧА 41/48
+// Дополни код так, чтобы:
+// В переменной sortedByAuthorName получился массив книг отсортированный по имени автора в алфавитном порядке.
+// В переменной sortedByReversedAuthorName получился массив книг отсортированный по имени автора в обратном алфавитном порядке.
+// В переменной sortedByAscendingRating получился массив книг отсортированный по возрастанию рейтинга.
+// В переменной sortedByDescentingRating получился массив книг отсортированный по убыванию рейтинга.
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const sortedByAuthorName = [...books].sort((firstBook, secondBook) =>
+  firstBook.author.localeCompare(secondBook.author)
+);
+
+const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) =>
+  secondBook.author.localeCompare(firstBook.author)
+);
+
+const sortedByAscendingRating = [...books].sort((firstBook, secondBook) =>
+  firstBook.rating - secondBook.rating
+);
+
+const sortedByDescentingRating = [...books].sort((firstBook, secondBook) =>
+  secondBook.rating - firstBook.rating
+);
+
+//                                                                      ЗАДАЧА 42/48
+// Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала массив пользователей отсортированный по возрастанию их баланса (свойство balance).
+// Change code below this line
+const sortByAscendingBalance = users => {
+  return [...users].sort((firstUser, secondUser) => firstUser.balance - secondUser.balance)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 43/48
+// Дополни функцию sortByDescendingFriendCount(users) так, чтобы она возвращала массив пользователей отсортированный по убыванию количества их друзей (свойство friends).
+// Change code below this line
+const sortByDescendingFriendCount = users => {
+   return [...users].sort((firstUser, secondUser) => secondUser.friends.length - firstUser.friends.length)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 44/48
+// Дополни функцию sortByName(users) так, чтобы она возвращала массив пользователей отсортированный по их имени (свойство name) в алфавитном порядке.
+// Change code below this line
+const sortByName = users => {
+  return [...users].sort((firstUser, secondUser) => firstUser.name.localeCompare(secondUser.name)); 
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 45/48
+// Дополни код так, чтобы в переменной names получился массив имён авторов в алфавитном порядке, рейтинг книг которых больше значения переменной MIN_BOOK_RATING.
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const names = [...books]
+.filter(book => book.rating > MIN_BOOK_RATING)
+.map(book => book.author)
+.sort((firstAuthor, secondAuthor) => firstAuthor.localeCompare(secondAuthor));
+console.log(names)
