@@ -699,3 +699,30 @@ const names = [...books]
 .map(book => book.author)
 .sort((firstAuthor, secondAuthor) => firstAuthor.localeCompare(secondAuthor));
 console.log(names)
+
+
+//                                                                      ЗАДАЧА 46/48
+// Дополни функцию getNamesSortedByFriendCount(users) так, чтобы она возвращала массив имён пользователей отсортированный по возрастанию количества их друзей (свойство friends).
+// Change code below this line
+const getNamesSortedByFriendCount = users => {
+   return [...users]
+   .sort((firstUser, secondUser) => firstUser.friends.length - secondUser.friends.length)
+   .map(user => user.name)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 47/48
+// Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив уникальных имён друзей (свойство friends) отсортированный по алфавиту .
+
+// Change code below this line
+const getSortedFriends = users => {
+   return [...users]
+   .flatMap(user => user.friends)
+   .filter((friend, index, array) => array.indexOf(friend) === index)
+   .sort((a, b) => a.localeCompare(b))
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 48/48
+// Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она возвращала общий баланс пользователей (свойство balance), пол которых (свойство gender)
+// совпадает со значением параметра gender.
