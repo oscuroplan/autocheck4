@@ -411,3 +411,20 @@ const getUsersWithAge = (users, minAge, maxAge) => {
 //                                                                      ЗАДАЧА 24/48
 // Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName.
 // Массив друзей пользователя хранится в свойстве friends.
+// Change code below this line
+const getUsersWithFriend = (users, friendName) => {
+   return users.filter(user => user.friends.includes(friendName))
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 25/48
+// Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends).
+// У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
+// Change code below this line
+const getFriends = (users) => {
+   return users.flatMap(user => user.friends).filter((friends, index, array) => array.indexOf(friends) === index)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 26/48
+// Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.
