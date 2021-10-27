@@ -428,3 +428,150 @@ const getFriends = (users) => {
 
 //                                                                      ЗАДАЧА 26/48
 // Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.
+// Change code below this line
+const getActiveUsers = (users) => {
+   return users.filter(user => user.isActive===true)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 27/48
+// Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей, значение свойства isActive которых false.
+// Change code below this line
+const getInactiveUsers = (users) => {
+   return users.filter(user => user.isActive===false)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 28/48
+// Используя метод find() дополни код так, чтобы:
+// В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает со значением переменной BOOK_TITLE.
+// В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со значением переменной AUTHOR.
+
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+];
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR = 'Robert Sheckley';
+// Change code below this line
+
+const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+const bookByAuthor = books.find(book => book.author === AUTHOR);
+
+//                                                                      ЗАДАЧА 29/48
+// Дополни функцию getUserWithEmail(users, email) так, чтобы она возвращала объект пользователя, почта которого (свойство email) совпадает со значением параметра email.
+// Change code below this line
+const getUserWithEmail = (users, email) => {
+   return users.find(user => user.email === email)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 30/48
+// Используя метод every() дополни код так, чтобы:
+// В переменной eachElementInFirstIsEven был результат проверки всех элементов массива firstArray на чётность.
+// В переменной eachElementInFirstIsOdd был результат проверки всех элементов массива firstArray на нечётность.
+// В переменной eachElementInSecondIsEven был результат проверки всех элементов массива secondArray на чётность.
+// В переменной eachElementInSecondIsOdd был результат проверки всех элементов массива secondArray на нечётность.
+// В переменной eachElementInThirdIsEven был результат проверки всех элементов массива thirdArray на чётность.
+// В переменной eachElementInThirdIsOdd был результат проверки всех элементов массива thirdArray на нечётность.
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change code below this line
+
+const eachElementInFirstIsEven = firstArray.every(value => value % 2 === 0);
+const eachElementInFirstIsOdd = firstArray.every(value => value % 2 !== 0);
+
+const eachElementInSecondIsEven = secondArray.every(value => value % 2 === 0);
+const eachElementInSecondIsOdd = secondArray.every(value => value % 2 !== 0);
+
+const eachElementInThirdIsEven = thirdArray.every(value => value % 2 === 0);
+const eachElementInThirdIsOdd = thirdArray.every(value => value % 2 !== 0);
+
+//                                                                      ЗАДАЧА 31/48
+// Дополни функцию isEveryUserActive(users) так, чтобы она проверяла все ли пользователи сейчас активны (свойство isActive) и возвращала true или false.
+// Change code below this line
+const isEveryUserActive = (users) => {
+   return users.every(user => user.isActive === true)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 32/48
+// Используя метод some() дополни код так, чтобы:
+// В переменной anyElementInFirstIsEven был результат проверки наличия чётных элементов в массиве firstArray.
+// В переменной anyElementInFirstIsOdd был результат проверки наличия нечётных элементов в массиве firstArray.
+// В переменной anyElementInSecondIsEven был результат проверки наличия чётных элементов в массиве secondArray.
+// В переменной anyElementInSecondIsOdd был результат проверки наличия нечётных элементов в массиве secondArray.
+// В переменной anyElementInThirdIsEven был результат проверки наличия чётных элементов в массиве thirdArray.
+// В переменной anyElementInThirdIsOdd был результат проверки наличия нечётных элементов в массиве thirdArray.
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change below this line
+
+const anyElementInFirstIsEven = firstArray.some(value => value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(value => value % 2 !== 0);
+
+const anyElementInSecondIsEven = secondArray.some(value => value % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some(value => value % 2 !== 0);
+
+const anyElementInThirdIsEven = thirdArray.some(value => value % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 !== 0);
+
+//                                                                      ЗАДАЧА 33/48
+// Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей (свойство isActive) и возвращала true или false.
+// Change code below this line
+const isAnyUserActive = users => {
+   return users.some(user => user.isActive === true)
+};
+// Change code above this line
+
+//                                                                      ЗАДАЧА 34/48
+// Игровому сервису необходим функционал подсчёта среднего времени проведённого в играх. Дополни код так, чтобы в переменной totalPlayTime получилось
+// общее игровое время из массива playtimes.
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// Change code below this line
+
+const totalPlayTime = playtimes.reduce((previousValue, number)=> {
+  return previousValue + number;
+}, 0);
+
+// Change code above this line
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+//                                                                      ЗАДАЧА 35/48
+// Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён.
+// Рассчитать время для каждого из игроков, можно разделив его время (свойство playtime) на количество игр (свойство gamesPlayed).
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+return total + player.playtime / player.gamesPlayed}, 0);
+
+//                                                                      ЗАДАЧА 36/48
+// Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят пользователи из массива users.
