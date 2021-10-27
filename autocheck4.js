@@ -575,7 +575,11 @@ return total + player.playtime / player.gamesPlayed}, 0);
 
 //                                                                      ЗАДАЧА 36/48
 // Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят пользователи из массива users.
-
+// Change code below this line
+const calculateTotalBalance = users => {
+  return users.reduce ((acc, total) => acc + total.balance, 0)
+};
+// Change code above this line
 
 
 
@@ -726,3 +730,10 @@ const getSortedFriends = users => {
 //                                                                      ЗАДАЧА 48/48
 // Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она возвращала общий баланс пользователей (свойство balance), пол которых (свойство gender)
 // совпадает со значением параметра gender.
+// Change code below this line
+const getTotalBalanceByGender = (users, gender) => {
+   return [...users]
+   .filter(user => user.gender === gender)
+   .reduce ((acc, total) => acc + total.balance, 0)
+};
+// Change code above this line
